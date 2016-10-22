@@ -93,7 +93,7 @@
 }
 
 .center {
-  test-align: center;
+  text-align: center;
 }
 
 .spacer-12 {
@@ -102,4 +102,19 @@
 
 .height-800 {
   height: 800px
+}
+
+.Search .dropdown-menu{
+  position: absolute;
+  width: 500px;
+  background-color: white;
+  z-index: 100;
+  display: block;
+  font-size: 25px;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+.Search .uib-typeahead-match.active{
+  background-color: #aaeeff;
 }

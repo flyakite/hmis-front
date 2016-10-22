@@ -3,28 +3,56 @@ angular.module('intake.controllers', [])
 
 //Dashboard
 .controller('DashboardController', 
-  function($scope, $state, DataStore) {
-    $scope.checkClientName = function() {
+  function($scope, $state, $timeout, DataStore) {
+    // $scope.clients = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+    $scope.typeAhead = function(event) {
+      if(event.keyCode == 13){
+        $scope.checkClientName();
+        return
+      };
+      
+      DataStore.all('api/customers/search', {name:$scope.name})
+        .then(function(clients) {
+          console.log(clients);
+          $scope.clients = [];
+          for(var i=clients.length;i--;){
+            $scope.clients.push(clients[i].name);
+          }
+          $timeout(function() {
+            $scope.$apply();
+          });
+        });
 
+    }
+
+    $scope.checkClientName = function() {
       DataStore.all('api/customers/search', {name:$scope.name})
       .then(function(clients) {
         console.log('clients result', clients);
-        if(clients && clients._id){
-          $state.go('profile', {_id:clients._id});
-        }else{
-          $state.go('checkclientnotregistered', {name:$scope.name});
+        if(clients && clients.length == 1){
+          $state.go('profile', {_id:clients[0]._id});
         }
-      })
+        // else{
+        //   $state.go('checkclientnotregistered', {name:$scope.name});
+        // }
+      });
+      return false;
     };
+
+    $scope.addNewClient = function() {
+      $state.go('newclient');
+      return false;
+    };
+
+
   })
 
 //Profile
 .controller('ProfileController',
   function($scope, $state, DataStore, $timeout) {
     
-    //dirty default value, just in case the id is wrong
     $scope.client = {
-      name: 'John Wayne',
+      name: '',
     };
 
     DataStore.get('api/customers', $state.params._id)
