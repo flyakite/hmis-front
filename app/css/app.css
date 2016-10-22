@@ -1,0 +1,89 @@
+/* app css stylesheet */
+
+.padding {
+  padding: 10px;
+}
+
+.padding-top {
+  padding-top: 10px;
+}
+
+.padding-left {
+  padding-left: 10px;
+}
+
+.padding-right {
+  padding-right: 10px;
+}
+
+.padding-bottom {
+  padding-bottom: 10px;
+}
+
+.padding-2 {
+  padding: 20px;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-border {
+  border: 0;
+}
+
+.margin {
+  margin: 10px;
+}
+
+.no-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
+
+.margin-top-2 {
+  margin-top: 20px;
+}
+
+.margin-right {
+  margin-right: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
+}
+
+.spacer {
+  width: 100%;
+  height: 10px;
+}
+
+.spacer-2 {
+  height: 20px;
+}
+
+.spacer-4 {
+  height: 40px;
+}
+
+.spacer-6 {
+  height: 60px;
+}
+
+.spacer-8 {
+  height: 80px;
+}
+
+.center {
+  test-align: center;
+}
+
+.spacer-12 {
+  height: 120px;
+}
