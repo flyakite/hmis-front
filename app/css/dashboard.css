@@ -1,9 +1,30 @@
+.logo {
+  position: absolute;
+  top: 20px;
+}
+.demo-drawer-header {
+  height: 175px !important;
+}
+.demo-cards h6 {
+  font-size: 20px;
+  font-family: 'Rubik', sans-serif;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.demo-cards .mdl-card__title.mdl-card__title {
+  background-size: cover;
+  background-position: center 10px;
+  min-height: 200px;
+}
+
 #demo-menu-lower-right {
   font-family: 'Rubik';
   height: 50px;
   width: 100%;
   padding-top: 5px;
   border-top: 1px solid #E0E0E0;
+  color: #757575;
 }
 .mdl-list__item-text-body {
   margin-top: 10px;
@@ -20,7 +41,6 @@
   font-weight: 300;
   letter-spacing: 1px;
   padding-left: 20px;
-  height: 50px;
   background-color: blue;
   margin: 0;
   width: 100%;
@@ -49,6 +69,7 @@
   font-size: 75px;
 }
 .mdl-list__item {
+  cursor: pointer;
   font-family: 'Rubik', sans-serif
 }
 .mdl-list__item-secondary-action .material-icons {
@@ -73,6 +94,7 @@ body > div > div > main > div > div.demo-client-list.mdl-color--white.mdl-shadow
 
 .mdl-layout-title{
   font-family: 'Rubik', sans-serif;
+  font-weight: 300;
 }
 .demo-avatar-dropdown {
   font-family: 'Rubik', sans-serif;
@@ -151,7 +173,8 @@ html, body {
 .demo-avatar {
   width: 48px;
   height: 48px;
-  border-radius: 24px;
+  border-radius: 50px;
+  border: 3px solid white;
 }
 .demo-layout .mdl-layout__header .mdl-layout__drawer-button {
   color: rgba(0, 0, 0, 0.54);

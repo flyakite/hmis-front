@@ -31,10 +31,12 @@
     </header>
     <nav class="demo-navigation mdl-navigation mdl-color--teal-800">
 
-      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-200 material-icons" role="presentation">power_settings_new</i>Home</a>
+      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-200 material-icons" role="presentation">dashboard</i>Dashboard</a>
+      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-200 material-icons" role="presentation">home</i>Housing</a>
+      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">folder_open</i>Case Management</a>
+      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">face</i>Client</a>
+      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">card_travel</i>Employment</a>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">timeline</i>Analytics</a>
-      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">face</i>Clients</a>
-      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Shelters</a>
       <div class="mdl-layout-spacer"></div>
     </nav>
   </div>
@@ -125,9 +127,46 @@ DOB: 03/24/1976
           <a href="#" class="mdl-button">View All</a>
         </div>
       </div>
-      <div class="demo-client-list mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-grid">
+      <div class="demo-cards mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title mdl-card--expand mdl-color--lime" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/811734/beds-chart.jpg')">
+                <h6 class="mdl-card__title-text">Available Beds</h6>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--teal">Check Availability</a>
+              </div>
+            </div>
+            <div class="demo-separator mdl-cell--1-col"></div>
+              <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title mdl-card--expand mdl-color--purple" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/811734/task-chart.jpg')">
+                <h6 class="mdl-card__title-text">Outstanding Tasks</h6>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--teal">See More</a>
+              </div>
+            </div>         
 
-      </div>
+          </div>
+
+           <div class="demo-cards mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title mdl-card--expand mdl-color--pink" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/811734/referral-chart.jpg')">
+                <h6 class="mdl-card__title-text">Suitable Referrals</h6>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--teal">See More</a>
+              </div>
+            </div>
+            <div class="demo-separator mdl-cell--1-col"></div>
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title mdl-card--expand mdl-color--cyan" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/811734/resource-chart.jpg')">
+                <h6 class="mdl-card__title-text">Resource Projections</h6>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--teal">See More</a>
+              </div>
+            </div>
+          </div>
 
     </div>
   </main>
