@@ -17,25 +17,25 @@ config(function(
     templateUrl: 'intake/dashboard.html',
     controller: 'DashboardController',
   })
-  .state('clientprofile', {
-    url: '/clientprofile?first_name&last_name',
-    templateUrl: 'intake/clientprofile.html',
-    controller: 'ClientProfileController',
+  .state('profile', {
+    url: '/profile/:_id',
+    templateUrl: 'intake/profile.html',
+    controller: 'ProfileController',
   })
   .state('checkclientlist', {
-    url: '/checkclientlist?first_name&last_name',
+    url: '/checkclientlist?name',
     templateUrl: 'intake/checkclientlist.html',
     controller: 'CheckClientListController',
   })
   .state('checkclientnotregistered', {
-    url: '/checkclientnotregistered?first_name&last_name',
+    url: '/checkclientnotregistered?name',
     templateUrl: 'intake/checkclientnotregistered.html',
     controller: 'CheckClientNotRegisteredController',
   })
   .state('newclient', {
-    url: '/newclient?first_name&last_name',
+    url: '/newclient?name',
     templateUrl: 'intake/newclient.html',
     controller: 'NewClientController',
   })
-  $urlRouterProvider.otherwise('/checkclient');
+  $urlRouterProvider.otherwise('/dashboard');
 });

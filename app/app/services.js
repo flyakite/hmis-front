@@ -19,7 +19,7 @@ angular.module('app.services', [])
       var d = $q.defer();
       $http.get(API_URL + classname, parseParams({params:params})).then(function(result) {
         // console.dir(result.data.results);
-        d.resolve(result);
+        d.resolve(result.data);
       },function(err) {
         d.reject(err);
       });
@@ -40,7 +40,7 @@ angular.module('app.services', [])
       var d = $q.defer();
       $http.get(API_URL + classname + '/' + id, parseParams({params:params}))
       .then(function(result) {
-        d.resolve(toJSDate(result.data));
+        d.resolve(result.data);
       }, function(err) {
         d.reject(err);
       });

@@ -1,37 +1,44 @@
 'use strict';
 angular.module('intake.controllers', [])
 
-//dashboard
+//Dashboard
 .controller('DashboardController', 
   function($scope, $state, DataStore) {
     $scope.checkClientName = function() {
+
       DataStore.all('api/customers/search', {name:$scope.name})
       .then(function(clients) {
         console.log('clients result', clients);
-        if(clients && clients.length == 1){
-          $state.go('clientprofile', {name:client.name});
-        }else if(clients){
-          $state.go('checkclientlist', {name:client.name});
+        if(clients && clients._id){
+          $state.go('profile', {_id:clients._id});
         }else{
-          $state.go('checkclientnotregistered', {name:client.name});
+          $state.go('checkclientnotregistered', {name:$scope.name});
         }
       })
     };
   })
+
 //Profile
-.controller('ClientProfileController',
-  function($scope, $state, DataStore) {
+.controller('ProfileController',
+  function($scope, $state, DataStore, $timeout) {
+    
+    //dirty default value, just in case the id is wrong
     $scope.client = {
-      name: $state.params.name || 'John Wayne',
+      name: 'John Wayne',
     };
+
+    DataStore.get('api/customers', $state.params._id)
+    .then(function(client) {
+      $scope.client = client;
+    })
   })
-//Client List
-.controller('CheckClientListController',
-  function($scope, $state, DataStore) {
-    $scope.client = {
-      name: $state.params.name,
-    };
-  })
+//Client List Deprecated
+// .controller('CheckClientListController',
+//   function($scope, $state, DataStore) {
+//     $scope.client = {
+//       name: $state.params.name,
+//     };
+//   })
 .controller('CheckClientNotRegisteredController',
   function($scope, $state, DataStore) {
     $scope.client = {
@@ -45,7 +52,6 @@ angular.module('intake.controllers', [])
     $scope.client.gender = 'Male';
     
     $scope.addNewClient = function() {
-      $scope.client.name = $scope.client.first_name + ' ' + $scope.client.last_name;
       console.log($scope.client);
       DataStore.create('api/customers', $scope.client)
       .then(function(result) {
