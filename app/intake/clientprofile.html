@@ -1,0 +1,157 @@
+<div class="container-fluid profile">
+  <div class="row">
+    <div class="col no-padding">
+      <div class="row teal lighten-2 padding-8">
+        <div class="col s4">
+          <div class="profile-photo">
+            <img class="responsive-img" src="images/sushi.jpg">
+          </div>
+          <div class="margin-top">
+            Homeless
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="client-name">
+            <h2>{{client.name}}</h2>
+          </div>
+          <div class="dob">
+            DOB: 10/12/1954
+          </div>
+          <div class="">
+            <span class="race">African-American</span> 
+            <span class="gender">Male</span>
+          </div>
+          <div class="phone">
+            {{client.phone}}
+          </div>
+          <div class="language">
+            Spanish
+          </div>
+          <div class="attributes">
+            Veteran, Vientan war, No VA Service
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <h5>Place of Contact</h5>
+            <div>
+              St Patric Center
+            </div>
+          </div>
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <h5>Emergency</h5>
+            <div>
+              Jane Doe
+              (816)762-4313
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- secondrow row of the body-->
+      <div class="row  padding-8">
+        <!-- 2-row 3-column -->
+        <div class="col s4 height-800">
+          
+          <div class="historic-data">
+            recent intake: November 12 2016
+            St Patric Center
+          </div>
+          <div class="sparkline">
+            <style>
+              /* tell the SVG path to be a thin blue line without any area fill */
+              path {
+                stroke: red;
+                stroke-width: 2;
+                fill: none;
+              }
+              .sparkcircle {
+                  fill: #f00;
+                  stroke: none;
+              }
+            </style>
+            <div id="graph" class="aGraph" style="position:absolute;top:0px;left:0; float:left; width:300px; height:100px;"></div>
+            <script src="https://d3js.org/d3.v2.min.js"></script>
+            <script>
+            
+              // create an SVG element inside the #graph div that fills 100% of the div
+              var graph = d3.select("#graph").append("svg:svg").attr("width", "100%").attr("height", "100%");
+
+              // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
+              var data = [3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 3, 6, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9];
+
+              // X scale will fit values from 0-10 within pixels 0-100
+              var x = d3.scale.linear().domain([0, 10]).range([0, 50]);
+              // Y scale will fit values from 0-10 within pixels 0-100
+              var y = d3.scale.linear().domain([0, 10]).range([0, 30]);
+
+              // create a line object that represents the SVN line we're creating
+              var line = d3.svg.line()
+                // assign the X function to plot our line as we wish
+                .x(function(d,i) { 
+                  // verbose logging to show what's actually being done
+                  console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
+                  // return the X coordinate where we want to plot this datapoint
+                  return x(i); 
+                })
+                .y(function(d) { 
+                  // verbose logging to show what's actually being done
+                  console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + " using our yScale.");
+                  // return the Y coordinate where we want to plot this datapoint
+                  return y(d); 
+                })
+            
+                // display the line by appending an svg:path element with the data line we created above
+                graph.append("svg:path").attr("d", line(data));
+              
+            </script>
+          </div>
+        </div>
+
+        <!-- 2-row 2-column -->
+        <div class="col s4 height-800">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <h5>Housing</h5>
+            <div>
+              Housing Voucher
+              from ...
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <h5>Income</h5>
+            <div>
+              Unemployed
+            </div>
+            <div class="">
+              SSI $123.31
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-row 3-column -->
+        <div class="col s4 height-800">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <h5>Medical</h5>
+            <div>
+              Medicaid <br>
+              #22475843 <br>
+              123 Sometreat St Louis <br>
+              MO 62774
+            </div>
+            <h5>Issue</h5>
+            <div>Mental Health</div>
+          </div>
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <h5>Criminal Record</h5>
+            <div>
+              Within last 7 years <br>
+              2010 Theft at grocery store
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

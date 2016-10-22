@@ -22,16 +22,18 @@ config(function(
     templateUrl: 'intake/profile.html',
     controller: 'ProfileController',
   })
-  .state('checkclientlist', {
-    url: '/checkclientlist?name',
-    templateUrl: 'intake/checkclientlist.html',
-    controller: 'CheckClientListController',
-  })
-  .state('checkclientnotregistered', {
-    url: '/checkclientnotregistered?name',
-    templateUrl: 'intake/checkclientnotregistered.html',
-    controller: 'CheckClientNotRegisteredController',
-  })
+  //DEPRECATED
+  // .state('checkclientlist', {
+  //   url: '/checkclientlist?name',
+  //   templateUrl: 'intake/checkclientlist.html',
+  //   controller: 'CheckClientListController',
+  // })
+  //DEPRECATED
+  // .state('checkclientnotregistered', {
+  //   url: '/checkclientnotregistered?name',
+  //   templateUrl: 'intake/checkclientnotregistered.html',
+  //   controller: 'CheckClientNotRegisteredController',
+  // })
   .state('newclient', {
     url: '/newclient?name',
     templateUrl: 'intake/newclient.html',
