@@ -1,50 +1,55 @@
 'use strict';
 angular.module('intake.controllers', [])
 
-.controller('CheckClientController', 
+//dashboard
+.controller('DashboardController', 
   function($scope, $state, DataStore) {
     $scope.checkClientName = function() {
-      console.log($scope.first_name, $scope.last_name);
-      var client = {
-        first_name: $scope.first_name,
-        last_name: $scope.last_name
-      };
-      DataStore.all('client', client)
+      DataStore.all('api/customers/search', {name:$scope.name})
       .then(function(clients) {
-        console.log(clients);
+        console.log('clients result', clients);
         if(clients && clients.length == 1){
-          $state.go('clientprofile', {first_name:client.first_name, last_name:client.last_name});
+          $state.go('clientprofile', {name:client.name});
         }else if(clients){
-          $state.go('checkclientlist', {first_name:client.first_name, last_name:client.last_name});
+          $state.go('checkclientlist', {name:client.name});
         }else{
-          $state.go('checkclientnotregistered', {first_name:client.first_name, last_name:client.last_name});
+          $state.go('checkclientnotregistered', {name:client.name});
         }
       })
     };
   })
+//Profile
 .controller('ClientProfileController',
   function($scope, $state, DataStore) {
     $scope.client = {
-      first_name: $state.params.first_name,
-      last_name: $state.params.last_name
+      name: $state.params.name || 'John Wayne',
     };
-
   })
+//Client List
 .controller('CheckClientListController',
   function($scope, $state, DataStore) {
     $scope.client = {
-      first_name: $state.params.first_name,
-      last_name: $state.params.last_name
+      name: $state.params.name,
     };
   })
 .controller('CheckClientNotRegisteredController',
   function($scope, $state, DataStore) {
     $scope.client = {
-      first_name: $state.params.first_name,
-      last_name: $state.params.last_name
+      name: $state.params.name,
     };
   })
-// .controller('CheckClientNotRegisteredController',
-//   function($scope, $state, DataStore) {
+.controller('NewClientController',
+  function($scope, $state, DataStore) {
+    $scope.client = {};
+    $scope.client.name = $state.params.name || '';
+    $scope.client.gender = 'Male';
     
-//   })
+    $scope.addNewClient = function() {
+      $scope.client.name = $scope.client.first_name + ' ' + $scope.client.last_name;
+      console.log($scope.client);
+      DataStore.create('api/customers', $scope.client)
+      .then(function(result) {
+        console.log('result', result);
+      })
+    };
+  })

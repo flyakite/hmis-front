@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <div class="row padding">
+    <div class="spacer-12"></div>
+    <div class="col offset-s4 s4 ">
+      <div class="row center">
+        <div class="">
+          <h4 class="teal-text text-lighten-1">New Client Registration</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input placeholder="" id="first_name" type="text" class="validate"
+            ng-model="client.first_name">
+          <label for="first_name">First Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input id="last_name" type="text" class="validate"
+            ng-model="client.last_name">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input id="address" type="text" class="validate"
+            ng-model="client.address">
+          <label for="address">Address</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input id="phone" type="text" class="validate"
+            ng-model="client.phone">
+          <label for="phone">Phone#</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input id="ssn" type="text" class="validate"
+            ng-model="client.ssn">
+          <label for="ssn">SSN</label>
+        </div>
+      </div>
+      <div class="row">
+        <label for="gender">Gender</label>
+          <p>
+            <input id="male" type="radio" ng-model="client.gender" value="male">
+            <label for="male">
+              Male
+            </label>
+          </p>
+          <p>
+            <input id="female" type="radio" ng-model="client.gender" value="female">
+            <label for="female">
+              Female
+            </label>
+          </p>
+          <p>
+            <input id="other" type="radio" ng-model="client.gender" value="other">
+            <label for="other">
+              Other
+            </label>
+          </p>
+      </div>
+      <div class="row center">
+        <a class="waves-effect waves-light btn" ng-click="addNewClient()">Create Client</a>
+      </div>
+    </div>
+  </div>
+</div>

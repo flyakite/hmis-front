@@ -12,10 +12,10 @@ config(function(
   // $locationProvider.hashPrefix('!');
 
   $stateProvider
-  .state('checkclient', {
-    url: '/checkclient',
-    templateUrl: 'intake/checkclient.html',
-    controller: 'CheckClientController',
+  .state('dashboard', {
+    url: '/dashboard',
+    templateUrl: 'intake/dashboard.html',
+    controller: 'DashboardController',
   })
   .state('clientprofile', {
     url: '/clientprofile?first_name&last_name',
@@ -31,6 +31,11 @@ config(function(
     url: '/checkclientnotregistered?first_name&last_name',
     templateUrl: 'intake/checkclientnotregistered.html',
     controller: 'CheckClientNotRegisteredController',
+  })
+  .state('newclient', {
+    url: '/newclient?first_name&last_name',
+    templateUrl: 'intake/newclient.html',
+    controller: 'NewClientController',
   })
   $urlRouterProvider.otherwise('/checkclient');
 });

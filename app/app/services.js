@@ -1,7 +1,7 @@
 angular.module('app.services', [])
 .factory('DataStore', function($q, $http) {
 
-  var API_URL = 'http://localhost:3000/';
+  var API_URL = 'https://391f8717.ngrok.io/';
 
   function parseParams (params) {
     //use angular.merge when available
@@ -19,7 +19,7 @@ angular.module('app.services', [])
       var d = $q.defer();
       $http.get(API_URL + classname, parseParams({params:params})).then(function(result) {
         // console.dir(result.data.results);
-        d.resolve(toJSDate(result.data.results));
+        d.resolve(result);
       },function(err) {
         d.reject(err);
       });
@@ -49,8 +49,7 @@ angular.module('app.services', [])
     create: function(classname, data) {
       // use copy to prevent callback update the data
       var dataCopied = angular.copy(data);
-      dataCopied = useParseDate(dataCopied);
-      console.dir(dataCopied);
+      console.log(dataCopied);
       return $http.post(API_URL + classname, dataCopied, parseParams());
     },
     update: function(classname, id, data) {
@@ -66,40 +65,40 @@ angular.module('app.services', [])
       return d.promise;
     }
   };
-  var service = {
-    all: function(classname, params) {
-      var d = $q.defer();
-      if(classname == 'client'){
-        d.resolve([
-          {
-            'first_name': 'John',
-            'last_name': 'Wayne',
-          }
-        ]);
-      }
-      return d.promise;
-    },
-    first: function(classname, params) {
-      var d = $q.defer();
-      d.resolve();
-      return d.promise;
-    },
-    get: function(classname, id, params) {
-      var d = $q.defer();
-      d.resolve();
-      return d.promise;
-    },
-    create: function(classname, data) {
-      var d = $q.defer();
-      d.resolve();
-      return d.promise;
-    },
-    update: function(classname, id, data) {
-      var d = $q.defer();
-      d.resolve();
-      return d.promise;
-    }
-  }
+  // var service = {
+  //   all: function(classname, params) {
+  //     var d = $q.defer();
+  //     if(classname == 'client'){
+  //       d.resolve([
+  //         {
+  //           'first_name': 'John',
+  //           'last_name': 'Wayne',
+  //         }
+  //       ]);
+  //     }
+  //     return d.promise;
+  //   },
+  //   first: function(classname, params) {
+  //     var d = $q.defer();
+  //     d.resolve();
+  //     return d.promise;
+  //   },
+  //   get: function(classname, id, params) {
+  //     var d = $q.defer();
+  //     d.resolve();
+  //     return d.promise;
+  //   },
+  //   create: function(classname, data) {
+  //     var d = $q.defer();
+  //     d.resolve();
+  //     return d.promise;
+  //   },
+  //   update: function(classname, id, data) {
+  //     var d = $q.defer();
+  //     d.resolve();
+  //     return d.promise;
+  //   }
+  // }
   return service;
 
 })
