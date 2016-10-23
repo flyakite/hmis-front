@@ -14,15 +14,10 @@ h2 {
 }
 .ok-contact-address {
     margin-top: 50px;
-<<<<<<< HEAD
-    background-color: rgba(255,255,255,.2); 
-    
-=======
     background-color: rgba(255,255,255,.2);  
 }
 .ok-emergency-info {
     background-color: rgba(255,220,264,.2); 
->>>>>>> master
 }
 
 /* d3.js stuff */
@@ -55,11 +50,7 @@ h2 {
 .RdYlGn .q10-11{fill:rgb(0,104,55);}
 
 /* tell the SVG path to be a thin blue line without any area fill */
-<<<<<<< HEAD
-path {
-=======
 .sparkLine {
->>>>>>> master
   stroke: red;
   stroke-width: 2;
   fill: none;
@@ -78,12 +69,9 @@ path {
   font-size: 25px
 }
 
-<<<<<<< HEAD
-=======
 .historic-data-first {
     color:#999;
 }
->>>>>>> master
 
 .demo-card-image.mdl-card {
   width: 256px;

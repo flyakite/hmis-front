@@ -123,10 +123,6 @@
   line-height: 38px;
 }
 
-<<<<<<< HEAD
-.housing-questions .input-field label{
-  color: #757575;
-=======
 /***
  *** BEGIN D3JS RELATIONSHIP GRAPH STYLES
  ***/
@@ -161,6 +157,5 @@ circle.node {
 
 .housing-questions .input-field label{
   color: #666;
->>>>>>> master
   font-size: 22px;
 }
