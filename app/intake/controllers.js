@@ -213,3 +213,9 @@ angular.module('intake.controllers', [])
       })
     };
   })
+
+//Housing
+.controller('HousingQuestionController',
+  function($scope, $state, DataStore) {
+
+  })

@@ -40,5 +40,10 @@ config(function(
     templateUrl: 'intake/newclient.html',
     controller: 'NewClientController',
   })
+  .state('housingquestions', {
+    url: '/housingquestions',
+    templateUrl: 'intake/housingquestions.html',
+    controller: 'HousingQuestionController',
+  })
   $urlRouterProvider.otherwise('/dashboard');
 });
