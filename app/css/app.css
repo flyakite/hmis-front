@@ -122,3 +122,36 @@
   color: #757575;
   line-height: 38px;
 }
+
+
+/***
+ *** BEGIN D3JS RELATIONSHIP GRAPH STYLES
+ ***/
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+circle.node {
+  cursor: pointer;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+#chart {
+  float:left;
+  margin: 0 0 10px 10px;
+}
+
+.tooltip {
+  float:left;
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  width:250px;
+}
