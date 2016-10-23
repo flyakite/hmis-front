@@ -98,11 +98,16 @@ p.breadcrumb {
   font-weight: 300;
   font-size: 16px;
   margin-bottom: 40px;
+  margin-left: 10px;
 }
 
+.demo-list-icon {
+  width: 300px;
+}
 
-
-
+.edit-info {
+  padding-left: 20px;
+}
 
 
 
