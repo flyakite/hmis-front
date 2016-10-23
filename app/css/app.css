@@ -116,5 +116,14 @@
   border: 1px solid #ddd;
 }
 .Search .uib-typeahead-match.active{
-  background-color: #aaeeff;
+  background-color: #ffdca4;
+}
+.Search a{
+  color: #757575;
+  line-height: 38px;
+}
+
+.housing-questions .input-field label{
+  color: #757575;
+  font-size: 22px;
 }
