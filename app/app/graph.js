@@ -186,8 +186,7 @@ function viz(graph) {
         }); 
 
     node.append("svg:text")
-      .attr("font-size","16px")
-      .style("font-weight", "bold")
+      .attr("font-size","18px")
       .attr("class", "nodetext")
       .attr("dx", "2.5em")
       .attr("text-anchor", "right")
