@@ -1,0 +1,253 @@
+<div class="mdl-layout__container">
+  <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">St. Patrick's Center</span>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        </div>
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+          <li class="mdl-menu__item">About</li>
+          <li class="mdl-menu__item">Contact</li>
+          <li class="mdl-menu__item">Legal information</li>
+        </ul>
+      </div>
+    </header>
+    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+      <header class="demo-drawer-header mdl-color--teal">
+        <div class="logo">
+          <a href="/"><img src="images/joyn-logo.png"></a>
+        </div>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/811734/0635dce.jpg" class="demo-avatar mdl-shadow--2dp">
+        <div class="demo-avatar-dropdown">
+          <span>Laurie Phillips</span>
+          <div class="mdl-layout-spacer"></div>
+          <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">arrow_drop_down</i>
+            <span class="visuallyhidden">Accounts</span>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+            <li class="mdl-menu__item">Switch User</li>
+            <li class="mdl-menu__item">Logout</li>
+          </ul>
+        </div>
+        <span>CEO</span>
+      </header>
+      <nav class="demo-navigation mdl-navigation mdl-color--teal-800">
+
+        <a class="mdl-navigation__link" href="/"><i class="mdl-color-text--white material-icons" role="presentation">apps</i>Dashboard</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--white material-icons" role="presentation">home</i>Housing</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--white material-icons" role="presentation">folder_open</i>Case Management</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--white material-icons" role="presentation">face</i>Clients</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--white material-icons" role="presentation">card_travel</i>Employment</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--white material-icons" role="presentation">timeline</i>Analytics</a>
+        <div class="mdl-layout-spacer"></div>
+      </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+      <div class="mdl-grid demo-content">
+
+
+        <div class="demo-search mdl-cell mdl-color--white mdl-shadow--2dp mdl-cell--12-col mdl-grid">
+          <div class="container">
+            <form action="" class="Search">
+              <input class="Search-box" type="search" id="Search-box" autocomplete="off" 
+                placeholder="Search Clients..."
+                ng-model="name"
+                uib-typeahead="client for client in clients | filter:$viewValue | limitTo:8"
+                ng-keyup="typeAhead($event)"
+                >
+              <label class="Search-label" for="Search-box">
+                <i class="material-icons mdl-color-text--teal">search</i>
+              </label>
+            </form>
+          </div>
+        </div>
+
+        <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--teal"
+            ng-click="addNewClient()">
+            <i class="material-icons">person_add</i>Add New Client
+          </button>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect orange mdl-color--orange">
+            <i class="material-icons">location_on</i>Find Emergency Shelter
+          </button>
+        </div>
+        <div class="demo-client-list mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-grid">
+
+          <h5 class="mdl-color--teal-800 mdl-color-text--white">Client List</h5>
+
+          <button id="demo-menu-lower-right" class="mdl-button mdl-js-button">
+            Filter By
+            <span>Highest Need</span>
+            <i class="material-icons">arrow_drop_down</i>
+          </button>
+
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+            <li class="mdl-menu__item">Highest Need</li>
+            <li class="mdl-menu__item">Date Added</li>
+            <li class="mdl-menu__item">Veterans</li>
+            <li class="mdl-menu__item">Youth</li>
+          </ul>
+          <ul class="demo-list-three mdl-list">
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                    
+                    <img class="client-avatar mdl-shadow--2dp" src="images/client01.jpg">
+                    
+                    <div class='client-name'>Bryan Cranston</div>
+                    <span class="mdl-list__item-text-body">59161720</span>
+              </span>
+              <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons"><i class="mdl-color-text--red-700 material-icons">error</i></i></a>
+                  </span>
+            </li>
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                    <img class="client-avatar mdl-shadow--2dp" src="images/client02.jpg">
+                    <div class='client-name'>Aaron Paul</div>
+                    <span class="mdl-list__item-text-body">69101320</span>
+              </span>
+              <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="mdl-color-text--yellow-700 material-icons">error</i></a>
+                  </span>
+            </li>
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-avatar mdl-color--teal-200">account_circle</i>
+                    <div class='client-name'>Bob Odenkirk</div>
+              <span class="mdl-list__item-text-body">26101417</span>
+              </span>
+              <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action mdl-color-text--light-green" href="#"><i class="material-icons">check_circle</i>
+                  </span>
+            </li>
+          </ul>
+          <div class="mdl-card__actions">
+            <a href="#" class="mdl-button">View All</a>
+          </div>
+        </div>
+        <div class="demo-cards mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+              <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+                <div class="mdl-card__title mdl-card--expand mdl-color--lime" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/811734/beds-chart.jpg')">
+                  <h6 class="mdl-card__title-text">Available Beds</h6>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--teal">Check Availability</a>
+                </div>
+              </div>
+              <div class="demo-separator mdl-cell--1-col"></div>
+                <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+                <div class="mdl-card__title mdl-card--expand mdl-color--purple" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/811734/task-chart.jpg')">
+                  <h6 class="mdl-card__title-text">Outstanding Tasks</h6>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--teal">See More</a>
+                </div>
+              </div>         
+
+            </div>
+
+             <div class="demo-cards mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+              <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+                <div class="mdl-card__title mdl-card--expand mdl-color--pink" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/811734/referral-chart.jpg')">
+                  <h6 class="mdl-card__title-text">Suitable Referrals</h6>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--teal">See More</a>
+                </div>
+              </div>
+              <div class="demo-separator mdl-cell--1-col"></div>
+              <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+                <div class="mdl-card__title mdl-card--expand mdl-color--cyan" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/811734/resource-chart.jpg')">
+                  <h6 class="mdl-card__title-text">Resource Projections</h6>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--teal">See More</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="demo-client-list mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+            <h5 class="mdl-color--teal-800 mdl-color-text--white">Agency Relationships</h5>
+              <div id='d3-graph'></div>
+            </div>
+      </div>
+    </main>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
+    <defs>
+      <mask id="piemask" maskContentUnits="objectBoundingBox">
+        <circle cx=0.5 cy=0.5 r=0.49 fill="white" />
+        <circle cx=0.5 cy=0.5 r=0.40 fill="black" />
+      </mask>
+      <g id="piechart">
+        <circle cx=0.5 cy=0.5 r=0.5 />
+        <path d="M 0.5 0.5 0.5 0 A 0.5 0.5 0 0 1 0.95 0.28 z" stroke="none" fill="rgba(255, 255, 255, 0.75)" />
+      </g>
+    </defs>
+  </svg>
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 250" style="position: fixed; left: -1000px; height: -1000px;">
+    <defs>
+      <g id="chart">
+        <g id="Gridlines">
+          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="27.3" x2="468.3" y2="27.3" />
+          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="66.7" x2="468.3" y2="66.7" />
+          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="105.3" x2="468.3" y2="105.3" />
+          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="144.7" x2="468.3" y2="144.7" />
+          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="184.3" x2="468.3" y2="184.3" />
+        </g>
+        <g id="Numbers">
+          <text transform="matrix(1 0 0 1 485 29.3333)" fill="#888888" font-family="'Roboto'" font-size="9">500</text>
+          <text transform="matrix(1 0 0 1 485 69)" fill="#888888" font-family="'Roboto'" font-size="9">400</text>
+          <text transform="matrix(1 0 0 1 485 109.3333)" fill="#888888" font-family="'Roboto'" font-size="9">300</text>
+          <text transform="matrix(1 0 0 1 485 149)" fill="#888888" font-family="'Roboto'" font-size="9">200</text>
+          <text transform="matrix(1 0 0 1 485 188.3333)" fill="#888888" font-family="'Roboto'" font-size="9">100</text>
+          <text transform="matrix(1 0 0 1 0 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">1</text>
+          <text transform="matrix(1 0 0 1 78 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">2</text>
+          <text transform="matrix(1 0 0 1 154.6667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">3</text>
+          <text transform="matrix(1 0 0 1 232.1667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">4</text>
+          <text transform="matrix(1 0 0 1 309 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">5</text>
+          <text transform="matrix(1 0 0 1 386.6667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">6</text>
+          <text transform="matrix(1 0 0 1 464.3333 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">7</text>
+        </g>
+        <g id="Layer_5">
+          <polygon opacity="0.36" stroke-miterlimit="10" points="0,223.3 48,138.5 154.7,169 211,88.5
+                294.5,80.5 380,165.2 437,75.5 469.5,223.3   " />
+        </g>
+        <g id="Layer_4">
+          <polygon stroke-miterlimit="10" points="469.3,222.7 1,222.7 48.7,166.7 155.7,188.3 212,132.7
+                296.7,128 380.7,184.3 436.7,125   " />
+        </g>
+      </g>
+    </defs>
+  </svg>
+</div>
+<!-- <div class="container-fluid">
+  <div class="row padding">
+    <div class="spacer-12"></div>
+    <div class="col offset-s4 s4 ">
+      <div class="row center">
+        <div class="">
+          <h4 class="teal-text text-lighten-1">Client Look Up</h4>
+        </div>
+      </div>
+      <div class="row center">
+        <div class="">
+          <h5 class="teal-text text-lighten-3">Add New Client</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="" id="name" type="text" class="validate"
+            ng-model="name">
+          <label for="name">Name</label>
+        </div>
+      </div>
+      <div class="row center">
+        <a class="waves-effect waves-light btn" ng-click="checkClientName()">next</a>
+      </div>
+    </div>
+  </div>
+</div> -->

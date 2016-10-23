@@ -1,0 +1,144 @@
+<div class="container-fluid">
+  <div class="row padding">
+    <div class="spacer-3"></div>
+    <div class="col offset-s4 s4 ">
+      <div class="row center">
+        <div class="">
+          <h4 class="teal-text text-lighten-1">New Client Registration</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input placeholder="" id="first_name" type="text" class="validate"
+            ng-model="client.name">
+          <label for="first_name">Name</label>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field">
+          <input id="address" type="text" class="validate"
+            ng-model="client.address">
+          <label for="address">Address</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input id="phone" type="text" class="validate"
+            ng-model="client.phone">
+          <label for="phone">Phone#</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input id="ssn" type="text" class="validate"
+            ng-model="client.ssn">
+          <label for="ssn">SSN</label>
+        </div>
+      </div>
+      <div class="row">
+        <label for="gender">Gender</label>
+          <p>
+            <input id="male" type="radio" ng-model="client.gender" value="male">
+            <label for="male">
+              Male
+            </label>
+          </p>
+          <p>
+            <input id="female" type="radio" ng-model="client.gender" value="female">
+            <label for="female">
+              Female
+            </label>
+          </p>
+          <p>
+            <input id="other" type="radio" ng-model="client.gender" value="other">
+            <label for="other">
+              Other
+            </label>
+          </p>
+      </div>
+      <div class="row">
+        <label for="scenario">Scenario</label>
+          <p>
+            <input id="scenario-shelter" type="radio" ng-model="client.scenario" value="shelter">
+            <label for="scenario-shelter">
+              Shelter
+            </label>
+          </p>
+          <p>
+            <input id="scenario-medical" type="radio" ng-model="client.scenario" value="medical">
+            <label for="scenario-medical">
+              Medical
+            </label>
+          </p>
+          <p>
+            <input id="scenario-behavioral" type="radio" ng-model="client.scenario" value="behavioral">
+            <label for="scenario-behavioral">
+              Behavioral
+            </label>
+          </p>
+          <p>
+            <input id="scenario-other" type="radio" ng-model="client.scenario" value="other">
+            <label for="scenario-other">
+              Other
+            </label>
+          </p>
+      </div>
+      <div class="row">
+        <input type="checkbox" id="isVeteran" value="isVeteran"><label for="isVeteran">Are you a Veteran?</label>
+      </div>
+
+      Further details:
+      <div class="row">
+        <ul class="collapsible popout" data-collapsible="accordion">
+           <li>
+              <div class="collapsible-header"><i class="material-icons">filter_drama</i>Housing</div>
+                <div class="collapsible-body">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="housingVoucherStatus" class="materialize-textarea"></textarea>
+                      <label for="housingVoucherStatus">Housing Voucher Status</label>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">place</i>Medical</div>
+              <div class="collapsible-body">
+                <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="emergencyContact" class="materialize-textarea"></textarea>
+                      <label for="emergencyContact">Emergency Contact</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="medicalHistory" class="materialize-textarea"></textarea>
+                      <label for="medicalHistory">Medical History</label>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">group_work</i>Other</div>
+              <div class="collapsible-body">
+                <div class="row">
+                   <a class='dropdown-button btn' href='#' data-activates='employmentStatus'>Employment Status</a>
+                  <ul id='employmentStatus' class='dropdown-content'>
+                    <li><a href="">Employed</a></li>
+                    <li><a href="">Unemployed</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Not sure</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+        </ul>
+      </div>
+
+      <div class="row center">
+        <a class="waves-effect waves-light btn btn-large" ng-click="addNewClient()">Create Client</a>
+      </div>
+    </div>
+  </div>
+</div>

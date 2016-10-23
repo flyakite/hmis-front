@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row padding">
+    <div class="spacer-12"></div>
+    <div class="col offset-s4 s4 ">
+      <div class="row center">
+        <div class="">
+          <h4 class="teal-text text-lighten-1">Client List</h4>
+        </div>
+      </div>
+      <div class="row center">
+        <div class="">
+          <h5 class="teal-text text-lighten-3">Add New Client</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="" id="first_name" type="text" class="validate"
+            ng-model="first_name">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate"
+            ng-model="last_name">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row center">
+        <a class="waves-effect waves-light btn" ng-click="checkClientName()">next</a>
+      </div>
+    </div>
+  </div>
+</div>
