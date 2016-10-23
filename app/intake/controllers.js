@@ -6,7 +6,7 @@ angular.module('intake.controllers', [])
   function($scope, $state, $timeout, DataStore) {
     // $scope.clients = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
     $scope.typeAhead = function(event) {
-      console.log($scope.name);
+      // console.log($scope.name);
       if(event.keyCode == 13){
         $scope.checkClientName();
         return
@@ -24,7 +24,7 @@ angular.module('intake.controllers', [])
           });
         });
 
-    }
+    };
 
     $scope.checkClientName = function() {
       DataStore.all('api/customers/search', {name:$scope.name})
@@ -45,6 +45,12 @@ angular.module('intake.controllers', [])
       return false;
     };
 
+
+    //material design fix
+    // $('.dropdown-button').dropdown('');
+    $timeout(function() {
+      componentHandler.upgradeDom();
+    });
 
   })
 
@@ -173,7 +179,11 @@ angular.module('intake.controllers', [])
             + "H" + (w0 + 1) * cellSize + "Z";
       }
     };
-    $timeout(callD3Calendar());
+
+    $timeout(function() {
+      callD3Calendar();
+      componentHandler.upgradeDom();
+    });
   })
 //Client List Deprecated
 // .controller('CheckClientListController',

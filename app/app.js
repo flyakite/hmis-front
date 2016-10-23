@@ -4,7 +4,6 @@
 angular.module('myApp', [
   'ui.router',
   'ngRoute',
-  'ui.bootstrap',
   'app.services',
   'intake.controllers'
 ]).
