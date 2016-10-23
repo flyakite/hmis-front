@@ -66,3 +66,53 @@ path {
   top: 12px;
   font-size: 25px
 }
+
+
+.demo-card-image.mdl-card {
+  width: 256px;
+  height: 256px;
+  background: url('../images/client02.jpg') center / cover;
+}
+.demo-card-image > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.demo-card-image__filename {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile-logo img{
+  width: 100px;
+  margin-right: 20px;
+}
+
+.ok-basic-info {
+  padding: 50px;
+}
+
+p.breadcrumb {
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
