@@ -146,13 +146,13 @@ circle.node {
 }
 
 .tooltip {
-  float:left;
+  margin: 20px 0 0 0;
+  z-index: 101;
   line-height: 1;
-  font-weight: bold;
   padding: 12px;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
-  width:250px;
+  float:right;
 }
 
 .housing-questions .input-field label{

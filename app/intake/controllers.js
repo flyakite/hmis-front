@@ -104,7 +104,7 @@ angular.module('intake.controllers', [])
         })
   
       // display the line by appending an svg:path element with the data line we created above
-      graph.append("svg:path").attr("d", line(data));
+      graph.append("svg:path").attr('class','sparkLine').attr("d", line(data));
     };
     showSparkline();
 
@@ -113,6 +113,7 @@ angular.module('intake.controllers', [])
           height = 136,
           cellSize = 17; // cell size
 
+      var d3 = d3v2;
       var percent = d3.format(".1%"),
           format = d3.time.format("%Y-%m-%d");
 
@@ -154,7 +155,7 @@ angular.module('intake.controllers', [])
           .attr("d", monthPath);
 
       d3.csv("dji.csv", function(csv) {
-        console.log(csv);
+        // console.log(csv);
         // console.dir(error);
         // if (error) throw error;
 
