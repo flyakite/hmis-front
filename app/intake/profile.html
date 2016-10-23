@@ -1,41 +1,45 @@
 <div class="container-fluid profile">
   <div class="row">
     <div class="col no-padding">
-      <div class="row teal lighten-2 padding-8">
-        <div class="col s4">
+      <div class="row teal lighten-2 padding-8 ok-basic-info">
+        <div class="col s12 m4">
           <div class="profile-photo">
             <img class="responsive-img" src="images/sushi.jpg">
           </div>
-          <div class="margin-top">
-            Homeless
-          </div>
-        </div>
-        <div class="col s4">
           <div class="client-name">
             <h2>{{client.name}}</h2>
           </div>
-          <div class="dob">
-            DOB: 10/12/1954
+          <div>
+            <span class="homeless">Homeless</span>
+            <span class="dob">10/12/1954</span>
           </div>
           <div class="">
             <span class="race">African-American</span> 
             <span class="gender">Male</span>
           </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="ssn">
+            <span>SSN</span> 399-32-1234
+          </div>
           <div class="phone">
+            <i class="material-icons">phone</i>
             {{client.phone}}
           </div>
           <div class="language">
-            Spanish
+            <i class="material-icons">record_voice_over</i> Spanish
           </div>
           <div class="attributes">
-            Veteran, Vientan war, No VA Service
+            Veteran, Vientam war<br />
+            No VA Service
           </div>
         </div>
-        <div class="col s4">
-          <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="col s12 m4">
+          <div class="card-panel lighten-5 z-depth-1 ok-contact-address">
             <h5>Place of Contact</h5>
             <div>
-              St Patric Center
+              St Patrick Center
+              800 N. Tucker Blvd., St. Louis, MO 63101
             </div>
           </div>
           <div class="card-panel grey lighten-5 z-depth-1">
@@ -51,7 +55,7 @@
       <!-- secondrow row of the body-->
       <div class="row  padding-8">
         <!-- 2-row 3-column -->
-        <div class="col s4 height-800">
+        <div class="col s12 m12 l4">
           
           <div class="historic-data">
             recent intake: November 12 2016 <br>
@@ -75,7 +79,7 @@
         </div>
 
         <!-- 2-row 2-column -->
-        <div class="col s4 height-800">
+        <div class="col s12 m12 l4">
           <div class="card-panel grey lighten-5 z-depth-1">
             <h5>Housing</h5>
             <div>
@@ -84,7 +88,7 @@
             </div>
           </div>
         </div>
-        <div class="col s4">
+        <div class="col s12 m12 l4">
           <div class="card-panel grey lighten-5 z-depth-1">
             <h5>Income</h5>
             <div>
@@ -97,7 +101,7 @@
         </div>
 
         <!-- 2-row 3-column -->
-        <div class="col s4 height-800">
+        <div class="col s12 m12 l4">
           <div class="card-panel grey lighten-5 z-depth-1">
             <h5>Medical</h5>
             <div>
