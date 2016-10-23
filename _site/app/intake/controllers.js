@@ -6,6 +6,7 @@ angular.module('intake.controllers', [])
   function($scope, $state, $timeout, DataStore) {
     // $scope.clients = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
     $scope.typeAhead = function(event) {
+      // console.log($scope.name);
       if(event.keyCode == 13){
         $scope.checkClientName();
         return
@@ -23,7 +24,7 @@ angular.module('intake.controllers', [])
           });
         });
 
-    }
+    };
 
     $scope.checkClientName = function() {
       DataStore.all('api/customers/search', {name:$scope.name})
@@ -31,10 +32,10 @@ angular.module('intake.controllers', [])
         console.log('clients result', clients);
         if(clients && clients.length == 1){
           $state.go('profile', {_id:clients[0]._id});
+        }else{
+          //dirty hack
+          $state.go('profile', {_id:clients[0]._id});
         }
-        // else{
-        //   $state.go('checkclientnotregistered', {name:$scope.name});
-        // }
       });
       return false;
     };
@@ -44,6 +45,12 @@ angular.module('intake.controllers', [])
       return false;
     };
 
+
+    //material design fix
+    // $('.dropdown-button').dropdown('');
+    $timeout(function() {
+      componentHandler.upgradeDom();
+    });
 
   })
 
@@ -72,7 +79,7 @@ angular.module('intake.controllers', [])
       var graph = d3.select("#graph").append("svg:svg").attr("width", "100%").attr("height", "100%");
 
       // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
-      var data = [3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 3, 6, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9];
+      var data = [9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9];
 
       // X scale will fit values from 0-10 within pixels 0-100
       var x = d3.scale.linear().domain([0, 10]).range([0, 50]);
@@ -84,13 +91,13 @@ angular.module('intake.controllers', [])
         // assign the X function to plot our line as we wish
         .x(function(d,i) { 
           // verbose logging to show what's actually being done
-          console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
+          // console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
           // return the X coordinate where we want to plot this datapoint
           return x(i); 
         })
         .y(function(d) { 
           // verbose logging to show what's actually being done
-          console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + " using our yScale.");
+          // console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + " using our yScale.");
           // return the Y coordinate where we want to plot this datapoint
           return y(d); 
         })
@@ -172,7 +179,11 @@ angular.module('intake.controllers', [])
             + "H" + (w0 + 1) * cellSize + "Z";
       }
     };
-    $timeout(callD3Calendar());
+
+    $timeout(function() {
+      callD3Calendar();
+      componentHandler.upgradeDom();
+    });
   })
 //Client List Deprecated
 // .controller('CheckClientListController',
@@ -196,8 +207,16 @@ angular.module('intake.controllers', [])
     $scope.addNewClient = function() {
       console.log($scope.client);
       DataStore.create('api/customers', $scope.client)
-      .then(function(result) {
-        console.log('result', result);
+      .then(function(client) {
+        console.log('result', client);
+        $state.go('profile', {_id:client._id});
+        return false;
       })
     };
+  })
+
+//Housing
+.controller('HousingQuestionController',
+  function($scope, $state, DataStore) {
+
   })
