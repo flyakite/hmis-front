@@ -79,7 +79,7 @@ angular.module('intake.controllers', [])
       var graph = d3.select("#graph").append("svg:svg").attr("width", "100%").attr("height", "100%");
 
       // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
-      var data = [3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 3, 6, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9];
+      var data = [9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9];
 
       // X scale will fit values from 0-10 within pixels 0-100
       var x = d3.scale.linear().domain([0, 10]).range([0, 50]);
