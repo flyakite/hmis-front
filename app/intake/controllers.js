@@ -50,6 +50,7 @@ angular.module('intake.controllers', [])
     // $('.dropdown-button').dropdown('');
     $timeout(function() {
       componentHandler.upgradeDom();
+      viz(JSON.parse(JSON.stringify(nodes.nodes)));
     });
 
   })
