@@ -1,9 +1,40 @@
+<<<<<<< HEAD
+=======
+
+.logo img {
+  position: absolute;
+  top: 20px;
+  width: 100px;
+}
+
+body > div.ng-scope > div > div > main > div > div.demo-client-list.mdl-color--white.mdl-shadow--2dp.mdl-cell.mdl-cell--6-col.mdl-grid > ul.demo-list-three.mdl-list > li:nth-child(3){
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.demo-cards h6 {
+  font-size: 20px;
+  font-family: 'Rubik', sans-serif;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.demo-cards .mdl-card__title.mdl-card__title {
+  background-size: cover;
+  background-position: center 10px;
+  min-height: 200px;
+}
+
+>>>>>>> master
 #demo-menu-lower-right {
   font-family: 'Rubik';
   height: 50px;
   width: 100%;
   padding-top: 5px;
   border-top: 1px solid #E0E0E0;
+<<<<<<< HEAD
+=======
+  color: #757575;
+>>>>>>> master
 }
 .mdl-list__item-text-body {
   margin-top: 10px;
@@ -15,12 +46,26 @@
   color: #757575;
 }
 
+<<<<<<< HEAD
+=======
+.client-avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+  float: left;
+  margin-right: 25px;
+}
+
+>>>>>>> master
 .demo-client-list h5 {
   font-family: 'Rubik';
   font-weight: 300;
   letter-spacing: 1px;
   padding-left: 20px;
+<<<<<<< HEAD
   height: 50px;
+=======
+>>>>>>> master
   background-color: blue;
   margin: 0;
   width: 100%;
@@ -49,6 +94,10 @@
   font-size: 75px;
 }
 .mdl-list__item {
+<<<<<<< HEAD
+=======
+  cursor: pointer;
+>>>>>>> master
   font-family: 'Rubik', sans-serif
 }
 .mdl-list__item-secondary-action .material-icons {
@@ -61,6 +110,14 @@
 .mdl-list__item-avatar.material-icons {
   width: 75px;
   height: 75px;
+<<<<<<< HEAD
+=======
+  border-radius: 100px;
+}
+.mdl-list__item-avatar.material-icons img {
+  width: 75px;
+  height: 75px;
+>>>>>>> master
 }
 .mdl-list__item--three-line {
   border-top: 1px solid #E0E0E0;
@@ -73,12 +130,20 @@ body > div > div > main > div > div.demo-client-list.mdl-color--white.mdl-shadow
 
 .mdl-layout-title{
   font-family: 'Rubik', sans-serif;
+<<<<<<< HEAD
+=======
+  font-weight: 300;
+>>>>>>> master
 }
 .demo-avatar-dropdown {
   font-family: 'Rubik', sans-serif;
 }
 .demo-search {
   padding: 0;
+<<<<<<< HEAD
+=======
+  height: 80px;
+>>>>>>> master
 }
 .demo-search .container {
   width: 100%;
@@ -94,7 +159,11 @@ body > div > div > main > div > div.demo-client-list.mdl-color--white.mdl-shadow
 
 .demo-search .Search-box {
   width: 100%;
+<<<<<<< HEAD
   padding: 8px 20px;
+=======
+  padding-left: 30px;
+>>>>>>> master
   height: 80px;
   border: 0;
   font-family: 'Rubik', sans-serif;
@@ -149,9 +218,16 @@ html, body {
   font-family: 'Rubik', sans-serif;
 }
 .demo-avatar {
+<<<<<<< HEAD
   width: 48px;
   height: 48px;
   border-radius: 24px;
+=======
+  width: 55px;
+  height: 55px;
+  border-radius: 50px;
+  border: 3px solid white;
+>>>>>>> master
 }
 .demo-layout .mdl-layout__header .mdl-layout__drawer-button {
   color: rgba(0, 0, 0, 0.54);
@@ -180,7 +256,12 @@ html, body {
   flex-direction: column;
   justify-content: flex-end;
   padding: 16px;
+<<<<<<< HEAD
   height: 151px;
+=======
+  height: 220px;
+  font-family: 'Rubik', sans-serif;
+>>>>>>> master
 }
 .demo-avatar-dropdown {
   display: flex;
@@ -188,6 +269,10 @@ html, body {
   flex-direction: row;
   align-items: center;
   width: 100%;
+<<<<<<< HEAD
+=======
+  font-size: 16px;
+>>>>>>> master
 }
 
 .demo-navigation {
@@ -197,12 +282,21 @@ html, body {
   display: flex !important;
   flex-direction: row;
   align-items: center;
+<<<<<<< HEAD
   color: rgba(255, 255, 255, 0.56);
   font-weight: 500;
 }
 .demo-layout .demo-navigation .mdl-navigation__link:hover {
   background-color: #00BCD4;
   color: #37474F;
+=======
+  color: white;
+  font-weight: 300;
+}
+.demo-layout .demo-navigation .mdl-navigation__link:hover {
+  background-color: #004D40;
+  transition: all .3s ease-in-out;     
+>>>>>>> master
 }
 .demo-navigation .mdl-navigation__link .material-icons {
   font-size: 24px;

@@ -1,7 +1,7 @@
 <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
   <div class="mdl-layout__header-row">
     <div class="profile-logo">
-      <img src="images/joyn-logo-teal.png">
+      <a href="/"><img src="images/joyn-logo-teal.png"></a>
     </div>
     <span class="mdl-layout-title">St. Patrick's Center</span>
     <div class="mdl-layout-spacer"></div>
@@ -81,14 +81,14 @@
           <div class="card-panel lighten-5 z-depth-1 ok-contact-address">
             <h5>Place of Contact</h5>
             <div>
-              St Patrick Center
+              St Patrick Center<br />
               800 N. Tucker Blvd., St. Louis, MO 63101
             </div>
           </div>
-          <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="card-panel lighten-5 z-depth-1 ok-emergency-info">
             <h5>Emergency</h5>
             <div>
-              Jane Doe
+              Jane Doe<br />
               (816)762-4313
             </div>
           </div>
@@ -102,23 +102,85 @@
           
           <div class="historic-data">
             recent intake: November 12 2016 <br>
-            St Patric Center
+            St Patrick Center
+          </div>
+          <div class="historic-data-first">
+            first intake: December 17 2015 <br>
+            St Patrick Center
           </div>
           <!-- calendar -->
           <div id="calendar"></div>
 
-          <h5>Activity</h5>
+          <h5>Agency Visits</h5>
           <!-- sparkline --> 
           <div class="sparkline">
-            <div id="graph" class="aGraph" style="width:300px; height:100px;"></div>
-            <div class="checkin-count" style="top: {{checkinSignTop}}px;">{{checkinCount}}</div>
-            <div class="row center" >
+            <div id="graph1" class="aGraph" style="width:300px; height:100px;"></div>
+            <div class="checkin-count" style="top: {{checkinSignTop}}px;">{{checkinCount1}}</div>
+            <div class="last-agency-visit">
+                Last visit: St Patrick Center
+            </div>
+            <div class="row right" >
               <a class="waves-effect waves-light btn" 
-                ng-click="checkIn()" 
-                ng-disabled="checkedin">Check In</a>
+                ng-click="checkIn1()" 
+                ng-disabled="checkedin1">Check In</a>
+            <a>refer</a>
             </div>
           </div>
+          <div class="spacer-4"></div>
 
+          <h5>Financial Aid</h5>
+          <!-- sparkline 2 --> 
+          <div class="sparkline">
+            <div id="graph2" class="aGraph" style="width:300px; height:100px;"></div>
+            <div class="checkin-count" style="top: {{checkinSignTop}}px;">{{checkinCount2}}</div>
+            <div class="last-agency-visit">
+                Last visit: St Patrick Center
+            </div>
+            <div class="row right" >
+              <a class="waves-effect waves-light btn" 
+                ng-click="checkIn2()" 
+                ng-disabled="checkedin2">Check In</a>
+            <a>refer</a>
+            </div>
+          </div>
+          <div class="spacer-4"></div>
+
+          <h5>Mental Health</h5>
+          <!-- sparkline 3 --> 
+          <div class="sparkline">
+            <div id="graph3" class="aGraph" style="width:300px; height:100px;"></div>
+            <div class="checkin-count" style="top: {{checkinSignTop}}px;">{{checkinCount3}}</div>
+            <div class="last-agency-visit">
+                Last visit: St Patrick Center
+            </div>
+            <div class="row right" >
+              <a class="waves-effect waves-light btn" 
+                ng-click="checkIn3()" 
+                ng-disabled="checkedin3">Check In</a>
+            <a>refer</a>
+            </div>
+          </div>
+          <div class="spacer-4"></div>
+           
+         
+          <h5>Substance Abuse</h5>
+          <!-- sparkline 3 --> 
+          <div class="sparkline">
+            <div id="graph4" class="aGraph" style="width:300px; height:100px;"></div>
+            <div class="checkin-count" style="top: {{checkinSignTop}}px;">{{checkinCount4}}</div>
+            <div class="last-agency-visit">
+                Last visit: St Patrick Center
+            </div>
+            <div class="row right" >
+              <a class="waves-effect waves-light btn" 
+                ng-click="checkIn4()" 
+                ng-disabled="checkedin4">Check In</a>
+            <a>refer</a>
+            </div>
+          </div>    
+          <div class="center">
+            <a class="btn">More Services</a>
+          </div> 
         </div>
 
         <!-- 2-row 2-column -->
@@ -127,21 +189,26 @@
             <h5>Housing</h5>
             <div>
               Housing Voucher
-              from ...
+              from Social Security Administration
+            </div>
+            <div>
+              Housing Voucher
+              from Social Security Administration
             </div>
             <a class="waves-effect waves-light btn" 
-                ui-sref="housingquestions">You really want to click here</a>
+                ui-sref="housingquestions">Questions</a>
             </div>
-          </div>
-        </div>
-        <div class="col s12 m12 l4">
+
           <div class="card-panel grey lighten-5 z-depth-1">
             <h5>Income</h5>
             <div>
-              Unemployed
+              Unemployed<br/>
+              3 evictions 2 years ago
             </div>
             <div class="">
-              SSI $123.31
+                SSI $123.31 <br />
+              SSDI $223.00 <br />
+              Other $50 
             </div>
           </div>
         </div>
@@ -154,16 +221,34 @@
               Medicaid <br>
               #22475843 <br>
               123 Sometreat St Louis <br>
-              MO 62774
+              MO 62774 <br />
+              No Medicare  
             </div>
-            <h5>Issue</h5>
-            <div>Mental Health</div>
+            <h5>Issues</h5>
+            <div>Dental  <a>refer</a></div>
+            <div>Substance abuse  <a>refer</a></div>
+            <div>Physical  <a>refer</a></div>
+            <div>Mental Health  <a>refer</a></div>
+                <div>Anxiety Medication<br>
+                    Ativan
+              </div>
+              <div>Depression Medication<br>
+                    Benzodiazepine
+              </div>
           </div>
           <div class="card-panel grey lighten-5 z-depth-1">
             <h5>Criminal Record</h5>
             <div>
               Within last 7 years <br>
-              2010 Theft at grocery store
+              2010 Theft at grocery store<br />
+                1 year probation
+            </div>
+          </div>
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <h5>Community Resources</h5>
+            <div>
+              Food Stamps <br>
+              Bus Fare
             </div>
           </div>
         </div>

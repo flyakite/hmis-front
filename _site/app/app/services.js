@@ -1,7 +1,12 @@
 angular.module('app.services', [])
 .factory('DataStore', function($q, $http) {
 
+<<<<<<< HEAD
   var API_URL = 'https://391f8717.ngrok.io/';
+=======
+  var API_URL = 'https://d57a8a22.ngrok.io/';
+
+>>>>>>> master
 
   function parseParams (params) {
     //use angular.merge when available
@@ -47,10 +52,24 @@ angular.module('app.services', [])
       return d.promise;
     },
     create: function(classname, data) {
+<<<<<<< HEAD
       // use copy to prevent callback update the data
       var dataCopied = angular.copy(data);
       console.log(dataCopied);
       return $http.post(API_URL + classname, dataCopied, parseParams());
+=======
+      var d = $q.defer();
+      // use copy to prevent callback update the data
+      var dataCopied = angular.copy(data);
+      console.log(dataCopied);
+      $http.post(API_URL + classname, dataCopied, parseParams())
+      .then(function(result) {
+        d.resolve(result.data);
+      }, function(err) {
+        d.reject(err);
+      });
+      return d.promise;
+>>>>>>> master
     },
     update: function(classname, id, data) {
       var dataCopied = angular.copy(data);

@@ -7,10 +7,18 @@
   "private": true,
   "dependencies": {
     "angular": "^1.5.8",
+<<<<<<< HEAD
+=======
+    "angular-bootstrap": "~2.2.0",
+>>>>>>> master
     "angular-route": "~1.5.0",
     "angular-loader": "~1.5.0",
     "angular-mocks": "~1.5.0",
     "html5-boilerplate": "^5.3.0",
+<<<<<<< HEAD
+=======
+    "angular-bootstrap": "2.2.0",
+>>>>>>> master
     "materialize": "^0.97.7",
     "bootstrap": "^3.3.7",
     "angular-ui-router": "^0.3.1",

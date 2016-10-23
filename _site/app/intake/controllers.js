@@ -11,7 +11,11 @@ angular.module('intake.controllers', [])
         $scope.checkClientName();
         return
       };
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> master
       DataStore.all('api/customers/search', {name:$scope.name})
         .then(function(clients) {
           console.log(clients);
@@ -50,6 +54,10 @@ angular.module('intake.controllers', [])
     // $('.dropdown-button').dropdown('');
     $timeout(function() {
       componentHandler.upgradeDom();
+<<<<<<< HEAD
+=======
+      viz(JSON.parse(JSON.stringify(nodes.nodes)));
+>>>>>>> master
     });
 
   })
@@ -66,20 +74,62 @@ angular.module('intake.controllers', [])
     .then(function(client) {
       $scope.client = client;
     });
+<<<<<<< HEAD
     $scope.checkinCount = 26;
     $scope.checkinSignTop = 12;
     $scope.checkIn = function() {
       $scope.checkinCount++;
       $scope.checkedin = true;
       $scope.checkinSignTop = 10;
+=======
+    $scope.checkinSignTop = 7;
+    $scope.checkinCount1 = 4;
+    $scope.checkIn1 = function() {
+      $scope.checkinCount1++;
+      $scope.checkedin1 = true;
+      console.log('msg');
+    };
+
+    $scope.checkinCount2 = 14;
+    $scope.checkIn2 = function() {
+      $scope.checkinCount2++;
+      $scope.checkedin2 = true;
+    };
+
+    $scope.checkinCount3 = 4;
+    $scope.checkIn3 = function() {
+      $scope.checkinCount3++;
+      $scope.checkedin3 = true;
+    };
+
+    $scope.checkinCount4 = 4;
+    $scope.checkIn4 = function() {
+      $scope.checkinCount4++;
+      $scope.checkedin4 = true;
+>>>>>>> master
     };
 
     var showSparkline = function() {
       // create an SVG element inside the #graph div that fills 100% of the div
+<<<<<<< HEAD
       var graph = d3.select("#graph").append("svg:svg").attr("width", "100%").attr("height", "100%");
 
       // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
       var data = [9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9];
+=======
+      var graph1 = d3.select("#graph1").append("svg:svg").attr("width", "100%").attr("height", "100%");
+      var graph2 = d3.select("#graph2").append("svg:svg").attr("width", "100%").attr("height", "100%");
+      var graph3 = d3.select("#graph3").append("svg:svg").attr("width", "100%").attr("height", "100%");
+      var graph4 = d3.select("#graph4").append("svg:svg").attr("width", "100%").attr("height", "100%");
+      // var graph5 = d3.select("#graph").append("svg:svg").attr("width", "100%").attr("height", "100%");
+
+      // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
+      var data1 = [9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9];
+      var data2 = [1, 9, 1, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 1, 9, 9, 9, 1, 9, 9, 9];
+      var data3 = [9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9];
+      var data4 = [9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9];
+      // var data5 = [1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9];
+>>>>>>> master
 
       // X scale will fit values from 0-10 within pixels 0-100
       var x = d3.scale.linear().domain([0, 10]).range([0, 50]);
@@ -103,7 +153,15 @@ angular.module('intake.controllers', [])
         })
   
       // display the line by appending an svg:path element with the data line we created above
+<<<<<<< HEAD
       graph.append("svg:path").attr("d", line(data));
+=======
+      graph1.append("svg:path").attr('class','sparkLine').attr("d", line(data1));
+      graph2.append("svg:path").attr('class','sparkLine').attr("d", line(data2));
+      graph3.append("svg:path").attr('class','sparkLine').attr("d", line(data3));
+      graph4.append("svg:path").attr('class','sparkLine').attr("d", line(data4));
+      // graph5.append("svg:path").attr('class','sparkLine').attr("d", line(data));
+>>>>>>> master
     };
     showSparkline();
 
@@ -112,6 +170,10 @@ angular.module('intake.controllers', [])
           height = 136,
           cellSize = 17; // cell size
 
+<<<<<<< HEAD
+=======
+      var d3 = d3v2;
+>>>>>>> master
       var percent = d3.format(".1%"),
           format = d3.time.format("%Y-%m-%d");
 
@@ -152,8 +214,13 @@ angular.module('intake.controllers', [])
           .attr("class", "month")
           .attr("d", monthPath);
 
+<<<<<<< HEAD
       d3.csv("app/dji.csv", function(csv) {
         console.log(csv);
+=======
+      d3.csv("dji.csv", function(csv) {
+        // console.log(csv);
+>>>>>>> master
         // console.dir(error);
         // if (error) throw error;
 

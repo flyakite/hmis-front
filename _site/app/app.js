@@ -15,12 +15,20 @@ config(function(
   $stateProvider
   .state('dashboard', {
     url: '/dashboard',
+<<<<<<< HEAD
     templateUrl: 'app/intake/dashboard.html',
+=======
+    templateUrl: 'intake/dashboard.html',
+>>>>>>> master
     controller: 'DashboardController',
   })
   .state('profile', {
     url: '/profile/:_id',
+<<<<<<< HEAD
     templateUrl: 'app/intake/profile.html',
+=======
+    templateUrl: 'intake/profile.html',
+>>>>>>> master
     controller: 'ProfileController',
   })
   //DEPRECATED
@@ -37,7 +45,11 @@ config(function(
   // })
   .state('newclient', {
     url: '/newclient?name',
+<<<<<<< HEAD
     templateUrl: 'app/intake/newclient.html',
+=======
+    templateUrl: 'intake/newclient.html',
+>>>>>>> master
     controller: 'NewClientController',
   })
   .state('housingquestions', {
