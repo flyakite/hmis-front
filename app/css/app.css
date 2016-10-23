@@ -123,7 +123,6 @@
   line-height: 38px;
 }
 
-
 /***
  *** BEGIN D3JS RELATIONSHIP GRAPH STYLES
  ***/
@@ -154,4 +153,9 @@ circle.node {
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   width:250px;
+}
+
+.housing-questions .input-field label{
+  color: #757575;
+  font-size: 22px;
 }

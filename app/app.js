@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ui.router',
+  'ui.bootstrap',
   'ngRoute',
   'app.services',
   'intake.controllers'
@@ -38,6 +39,11 @@ config(function(
     url: '/newclient?name',
     templateUrl: 'intake/newclient.html',
     controller: 'NewClientController',
+  })
+  .state('housingquestions', {
+    url: '/housingquestions',
+    templateUrl: 'intake/housingquestions.html',
+    controller: 'HousingQuestionController',
   })
   $urlRouterProvider.otherwise('/dashboard');
 });
