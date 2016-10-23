@@ -18,9 +18,9 @@
   <div class="row">
     <div class="no-padding">
       <div class="row ok-basic-info mdl-color--teal">
+          <p class="breadcrumb">Dashboard / My Clients / Craig Ferguson</p>
         <div class="col s12 m4">
         <!-- Image card -->
-          <p class="breadcrumb">Dashboard / My Clients / Craig Ferguson</p>
           <div class="demo-card-image mdl-card mdl-shadow--2dp profile">
             <div class="mdl-card__title mdl-card--expand"></div>
             <div class="mdl-card__actions">
@@ -28,17 +28,38 @@
             </div>
           </div>
 
-          <div class="client-name">
-            <h2>{{client.name}}</h2>
+          <div class="client-name mdl-color-text--white">
+            <h3>{{client.name}}<i class="edit-info material-icons">edit</i></h3>
+            
           </div>
-          <div>
-            <span class="homeless">Homeless</span>
-            <span class="dob">10/12/1954</span>
-          </div>
-          <div class="">
-            <span class="race">African-American</span> 
-            <span class="gender">Male</span>
-          </div>
+
+          <ul class="demo-list-icon mdl-list">
+            <li class="mdl-list__item mdl-color-text--teal-100">
+              <span class="mdl-list__item-primary-content">
+              <i class="mdl-color-text--teal-100 material-icons mdl-list__item-icon">home</i>
+              Homeless
+          </span>
+            </li>
+            <li class="mdl-list__item mdl-color-text--teal-100">
+              <span class="mdl-list__item-primary-content">
+              <i class="mdl-color-text--teal-100 material-icons mdl-list__item-icon">date_range</i>
+              DOB: 10/12/1954
+            </span>
+            </li>
+            <li class="mdl-list__item mdl-color-text--teal-100">
+              <span class="mdl-list__item-primary-content">
+              <i class="mdl-color-text--teal-100 material-icons mdl-list__item-icon">language</i>
+              African-American
+            </span>
+            </li>
+            <li class="mdl-list__item mdl-color-text--teal-100">
+              <span class="mdl-list__item-primary-content">
+              <i class="mdl-color-text--teal-100 material-icons mdl-list__item-icon">person</i>
+              Male
+            </span>
+            </li>
+          </ul>
+
         </div>
         <div class="col s12 m4">
           <div class="ssn">
