@@ -84,11 +84,9 @@ var POS_TO_NAME = {
 };
 
 function viz(graph) {
-  console.log(graph);
   var svg = d3.select("#d3-graph").append("svg:svg"),
-      width = 600,
+      width = 700,
       height = 500;
-    console.info(svg);
   svg
     .style("width", width)
     .style("height", height)
@@ -99,7 +97,7 @@ function viz(graph) {
       .force("link", d3.forceLink().id(function(d) { return d.form; }).distance(120))
       .force("charge", d3.forceManyBody(-20))
       .force("collide", d3.forceCollide(100).iterations(1))
-      .force("center", d3.forceCenter(width / 2, height / 2));
+      .force("center", d3.forceCenter(width / 3, height / 2));
 
     var verticies = [];
     for (var i in graph) {
@@ -150,7 +148,7 @@ function viz(graph) {
         .on("drag", dragged)
         .on("end", dragended));
 
-  var tooltipDiv = d3.select("body").append("div") 
+  var tooltipDiv = d3.select("#d3-graph").append("div") 
     .attr("class", "tooltip")
     .style("opacity", 0);
 
@@ -188,8 +186,7 @@ function viz(graph) {
         }); 
 
     node.append("svg:text")
-      .attr("font-size","16px")
-      .style("font-weight", "bold")
+      .attr("font-size","18px")
       .attr("class", "nodetext")
       .attr("dx", "2.5em")
       .attr("text-anchor", "right")
