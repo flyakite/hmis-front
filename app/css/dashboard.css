@@ -5,6 +5,10 @@
   width: 100px;
 }
 
+body > div.ng-scope > div > div > main > div > div.demo-client-list.mdl-color--white.mdl-shadow--2dp.mdl-cell.mdl-cell--6-col.mdl-grid > ul.demo-list-three.mdl-list > li:nth-child(3){
+  border-bottom: 1px solid #E0E0E0;
+}
+
 .demo-cards h6 {
   font-size: 20px;
   font-family: 'Rubik', sans-serif;
@@ -34,6 +38,14 @@
   font-size: 24px;
   line-height: 24px;
   color: #757575;
+}
+
+.client-avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+  float: left;
+  margin-right: 25px;
 }
 
 .demo-client-list h5 {
@@ -80,6 +92,11 @@
 }
 
 .mdl-list__item-avatar.material-icons {
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+}
+.mdl-list__item-avatar.material-icons img {
   width: 75px;
   height: 75px;
 }
