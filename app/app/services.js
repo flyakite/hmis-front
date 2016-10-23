@@ -1,7 +1,8 @@
 angular.module('app.services', [])
 .factory('DataStore', function($q, $http) {
 
-  var API_URL = 'https://391f8717.ngrok.io/';
+  var API_URL = 'https://d57a8a22.ngrok.io/';
+
 
   function parseParams (params) {
     //use angular.merge when available

@@ -32,10 +32,10 @@ angular.module('intake.controllers', [])
         console.log('clients result', clients);
         if(clients && clients.length == 1){
           $state.go('profile', {_id:clients[0]._id});
+        }else{
+          //dirty hack
+          $state.go('profile', {_id:clients[0]._id});
         }
-        // else{
-        //   $state.go('checkclientnotregistered', {name:$scope.name});
-        // }
       });
       return false;
     };
@@ -210,6 +210,7 @@ angular.module('intake.controllers', [])
       .then(function(client) {
         console.log('result', client);
         $state.go('profile', {_id:client._id});
+        return false;
       })
     };
   })
