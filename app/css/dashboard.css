@@ -227,8 +227,8 @@ html, body {
   font-weight: 300;
 }
 .demo-layout .demo-navigation .mdl-navigation__link:hover {
-  background-color: #00BCD4;
-  color: #37474F;
+  background-color: #004D40;
+  transition: all .3s ease-in-out;     
 }
 .demo-navigation .mdl-navigation__link .material-icons {
   font-size: 24px;
