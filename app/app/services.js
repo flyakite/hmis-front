@@ -47,10 +47,17 @@ angular.module('app.services', [])
       return d.promise;
     },
     create: function(classname, data) {
+      var d = $q.defer();
       // use copy to prevent callback update the data
       var dataCopied = angular.copy(data);
       console.log(dataCopied);
-      return $http.post(API_URL + classname, dataCopied, parseParams());
+      $http.post(API_URL + classname, dataCopied, parseParams())
+      .then(function(result) {
+        d.resolve(result.data);
+      }, function(err) {
+        d.reject(err);
+      });
+      return d.promise;
     },
     update: function(classname, id, data) {
       var dataCopied = angular.copy(data);
