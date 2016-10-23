@@ -51,6 +51,7 @@ angular.module('intake.controllers', [])
     $timeout(function() {
       componentHandler.upgradeDom();
       viz(JSON.parse(JSON.stringify(nodes.nodes)));
+      window.scrollTo(0, 0);
     });
 
   })
@@ -215,6 +216,7 @@ angular.module('intake.controllers', [])
     $timeout(function() {
       callD3Calendar();
       componentHandler.upgradeDom();
+      window.scrollTo(0, 0);
     });
   })
 //Client List Deprecated
@@ -250,5 +252,5 @@ angular.module('intake.controllers', [])
 //Housing
 .controller('HousingQuestionController',
   function($scope, $state, DataStore) {
-
+    window.scrollTo(0, 0);
   })

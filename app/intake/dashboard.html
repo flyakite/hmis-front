@@ -57,7 +57,7 @@
                 uib-typeahead="client for client in clients | filter:$viewValue | limitTo:8"
                 ng-keyup="typeAhead($event)"
                 >
-              <label class="Search-label" for="Search-box">
+              <label class="Search-label" for="Search-box" ng-click="checkClientName()">
                 <i class="material-icons mdl-color-text--teal">search</i>
               </label>
             </form>
